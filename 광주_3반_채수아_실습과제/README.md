@@ -1,5 +1,7 @@
 # 파일 구성
 
+실행 시 `소스코드/index.html`을 VS Code Live Server로 열어 주세요.
+
 - `HTML_CSS_JavaScript_실습결과보고서_채수아.pdf`: 실행 결과와 자체평가를 정리한 보고서
 - `소스코드/index.html`: 전체 실습과 추가과제로 이동하는 시작 화면
 - `소스코드/assets`, `소스코드/css`: 공통 글꼴과 화면 스타일 파일
