@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="../../../../../css/project-shell.css?v=4">
+</head>
+<body class="signup-page">
+  <header class="archive-header"><a class="archive-brand" href="../../../../../index.html">CHAE / FRONTEND</a><span class="archive-page-name">회원가입</span><a class="archive-home" href="../../../../../index.html">전체 과제</a></header>
+
+  <main>
+    <section class="page-intro" aria-labelledby="signup-title">
+      <p class="page-kicker">JOIN THE ARCHIVE</p>
+      <h1 id="signup-title">회원가입</h1>
+      <p>기본 정보와 관심 분야를 입력해 나만의 프로필을 완성해 보세요.</p>
+    </section>
+
+    <form id="signupForm" action="result.html" method="get">
+      <fieldset>
+        <legend>필수 정보</legend>
+
+        <label for="name">이름</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="userId">아이디</label>
+        <input id="userId" name="userId" type="text" pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{4,12}" title="영문과 숫자를 모두 포함해 4~12자로 입력하세요." aria-describedby="userIdHint" required>
+        <small id="userIdHint" class="field-hint">영문과 숫자를 조합해 4~12자로 입력하세요.</small>
+
+        <label for="password">비밀번호</label>
+        <div class="password-row">
+          <input id="password" type="password" minlength="8" aria-describedby="passwordStrength passwordPrivacy" required>
+          <button id="togglePassword" class="inline-button" type="button" aria-pressed="false">보기</button>
+        </div>
+        <div class="strength-track" aria-hidden="true"><span id="strengthBar"></span></div>
+        <small id="passwordStrength" class="field-hint">8자 이상 입력하세요.</small>
+        <small id="passwordPrivacy" class="field-hint">비밀번호는 결과 페이지 주소에 포함되지 않습니다.</small>
+
+        <label for="passwordConfirm">비밀번호 확인</label>
+        <input id="passwordConfirm" type="password" minlength="8" aria-describedby="passwordConfirmHint" required>
+        <small id="passwordConfirmHint" class="field-hint">같은 비밀번호를 한 번 더 입력하세요.</small>
+
+        <label for="email">이메일</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">전화번호</label>
+        <input id="phone" name="phone" type="tel" pattern="010-[0-9]{4}-[0-9]{4}" placeholder="010-0000-0000">
+
+        <label for="birthDate">생년월일</label>
+        <input id="birthDate" name="birthDate" type="date" min="1900-01-01"
+          autocomplete="bday" aria-describedby="birthDateHint">
+        <small id="birthDateHint" class="field-hint">달력에서 생년월일을 선택하세요.</small>
+      </fieldset>
+
+      <fieldset>
+        <legend>선택 정보</legend>
+
+        <p>성별</p>
+        <label><input name="gender" type="radio" value="남성"> 남성</label>
+        <label><input name="gender" type="radio" value="여성"> 여성</label>
+        <label><input name="gender" type="radio" value="선택 안 함" checked> 선택 안 함</label>
+
+        <p>관심 분야</p>
+        <label><input name="interest" type="checkbox" value="프론트엔드"> 프론트엔드</label>
+        <label><input name="interest" type="checkbox" value="백엔드"> 백엔드</label>
+        <label><input name="interest" type="checkbox" value="디자인"> 디자인</label>
+
+        <label for="region">지역</label>
+        <select id="region" name="region">
+          <option value="">선택하세요</option>
+          <option>서울</option><option>광주</option><option>부산</option><option>기타</option>
+        </select>
+
+        <label for="introduction">자기소개</label>
+        <textarea id="introduction" name="introduction" maxlength="200" aria-describedby="introCount"></textarea>
+        <small id="introCount" class="field-hint count-hint">0 / 200자</small>
+      </fieldset>
+
+      <label><input name="terms" type="checkbox" value="동의" required> 이용약관에 동의합니다. (필수)</label>
+
+      <div class="buttons">
+        <button class="btn btn-primary" type="submit">가입하기</button>
+        <button class="btn" type="reset">초기화</button>
+      </div>
+      <p id="draftStatus" class="draft-status" aria-live="polite"></p>
+    </form>
+  </main>
+  <footer class="archive-footer"><span>Frontend Practice Archive</span><a href="#top">맨 위로 ↑</a></footer>
+  <script src="js/form.js?v=4"></script>
+</body>
+</html>

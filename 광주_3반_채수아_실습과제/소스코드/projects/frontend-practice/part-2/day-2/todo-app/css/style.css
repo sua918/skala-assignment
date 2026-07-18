@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #e9ebea; color: #1c1c1c; font-family: Pretendard, Arial, sans-serif; }
+main { max-width: 760px; margin: auto; padding: 64px 24px 30px; }
+main > h1 { margin: 0; font-size: clamp(38px, 8vw, 68px); letter-spacing: -.05em; }
+#quote { min-height: 24px; margin: 14px 0 34px; color: #606360; }
+form { display: grid; grid-template-columns: minmax(0, 1fr) 120px 160px; gap: 12px; padding: 20px; border: 1px solid #9fa39f; }
+form label { display: grid; gap: 7px; }
+form label > span { font-size: 11px; font-weight: 800; letter-spacing: .06em; }
+input, select { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid #1c1c1c; border-radius: 0; background: #e9ebea; color: #1c1c1c; font: inherit; }
+input:focus, select:focus { outline: 2px solid #2463eb; outline-offset: 2px; }
+.form-actions { grid-column: 1 / -1; display: flex; gap: 8px; }
+button { padding: 10px 16px; border: 1px solid #1c1c1c; background: #e9ebea; color: #1c1c1c; font-weight: 700; cursor: pointer; transition: background .18s ease, color .18s ease; }
+button:hover, button:focus-visible { background: #1c1c1c; color: #e9ebea; }
+form button { background: #1c1c1c; color: #e9ebea; }
+form button:hover, form button:focus-visible { background: #e9ebea; color: #1c1c1c; }
+#cancelEditButton { background: #e9ebea; color: #1c1c1c; }
+.form-feedback { min-height: 20px; margin: 8px 20px 0; color: #b42318; font-size: 13px; font-weight: 700; }
+input[aria-invalid="true"] { border-color: #b42318; }
+.progress-panel { margin: 24px 0 0; padding: 18px 20px; border: 1px solid #9fa39f; }
+.progress-panel > div:first-child { display: flex; align-items: center; justify-content: space-between; }
+.progress-panel h2 { margin: 0; font-size: 15px; }
+.progress-track { height: 8px; margin-top: 12px; overflow: hidden; background: #cfd2cf; }
+#progressBar { display: block; width: 0; height: 100%; background: #1c1c1c; transition: width .25s ease; }
+#filters { display: flex; margin: 20px 0; }
+#filters button + button { border-left: 0; }
+#filters .active { background: #1c1c1c; color: #e9ebea; }
+ul { padding: 0; list-style: none; }
+li { display: flex; align-items: center; gap: 10px; padding: 14px 0; border-bottom: 1px solid #aaa; }
+.todo-content { display: grid; flex: 1; gap: 5px; min-width: 0; }
+.todo-text { overflow-wrap: anywhere; }
+.todo-meta { color: #686c69; font-size: 11px; }
+li.done .todo-text { color: #777; text-decoration: line-through; }
+li.overdue .todo-meta { color: #b42318; font-weight: 800; }
+.toggle { flex: 0 0 18px; width: 18px; height: 18px; min-height: 0; margin: 0; padding: 0; accent-color: #1c1c1c; }
+.edit, .delete { padding: 6px 10px; background: transparent; color: #1c1c1c; }
+.empty-state { margin: 0; padding: 36px 18px; border: 1px dashed #9fa39f; color: #666; text-align: center; }
+#summary { color: #555; font-size: 13px; text-align: right; }
+@media (max-width: 650px) { main { padding: 42px 16px 24px; }form { grid-template-columns: 1fr 1fr; }.todo-field { grid-column: 1 / -1; }.form-actions { display: grid; grid-template-columns: 1fr 1fr; }.edit, .delete { padding-inline: 8px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

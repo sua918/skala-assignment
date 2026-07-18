@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="2025년 8월 미국 서부 로드트립을 소개하는 실습 페이지">
+  <meta name="author" content="SKALA Student">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미국 서부 로드트립</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="../../../../../css/project-shell.css?v=4">
+</head>
+<body id="top">
+  <header class="archive-header travel-archive-header"><a class="archive-brand" href="../../../../../index.html">CHAE / FRONTEND</a><span class="archive-page-name">여행지 소개</span><nav class="archive-subnav" aria-label="페이지 메뉴"><a href="#intro">소개</a><a href="#places">명소</a><a href="#food">먹거리</a><a href="#video">영상</a></nav><a class="archive-home" href="../../../../../index.html">전체 과제</a></header>
+  <header class="travel-header">
+    <div class="hero"><div><p>ARIZONA · NEVADA · CALIFORNIA / AUG 2025</p><h1>미국 서부 로드트립</h1></div></div>
+  </header>
+
+  <main>
+    <section id="intro"><h2>여행지 소개</h2><p>2025년 8월, 애리조나의 협곡에서 네바다 라스베이거스를 지나 캘리포니아의 사막까지 직접 여행하며 기록한 미국 서부의 풍경을 소개합니다.</p></section>
+
+    <section id="places">
+      <h2>추천 명소</h2>
+      <div class="gallery">
+        <figure class="antelope" data-id="antelope" data-title="엔텔로프 캐니언" data-description="붉은 사암 사이로 들어오는 빛기둥과 유려한 곡선을 가까이에서 만나는 슬롯 캐니언입니다." data-tip="사전 예약한 가이드 투어로만 입장할 수 있으며 한낮 시간대에 빛이 가장 선명합니다."><img src="../../../../shared-media/antelope-canyon.jpg" alt="햇빛이 비치는 엔텔로프 캐니언의 붉은 사암 협곡"><figcaption><strong>엔텔로프 캐니언</strong><span>빛에 따라 표정이 달라지는 슬롯 캐니언</span><div class="place-actions"><button class="place-detail" type="button">자세히 보기</button><button class="place-save" type="button" aria-pressed="false">♡ 일정 저장</button></div></figcaption></figure>
+        <figure class="grand-canyon" data-id="grand-canyon" data-title="그랜드 캐니언" data-description="수억 년 동안 형성된 지층과 콜로라도강을 전망대와 트레일에서 바라볼 수 있는 대협곡입니다." data-tip="일출과 일몰의 기온 차가 크므로 얇은 겉옷과 충분한 물을 준비하세요."><img src="../../../../shared-media/grand-canyon.jpg" alt="그랜드 캐니언 절벽 위에서 협곡을 바라보는 여행자"><figcaption><strong>그랜드 캐니언</strong><span>수억 년의 지층이 겹쳐진 거대한 전망</span><div class="place-actions"><button class="place-detail" type="button">자세히 보기</button><button class="place-save" type="button" aria-pressed="false">♡ 일정 저장</button></div></figcaption></figure>
+        <figure class="death-valley" data-id="death-valley" data-title="데스밸리" data-description="소금 평원과 황토빛 지층, 사막 산맥이 이어지는 북미에서 가장 낮고 건조한 지역입니다." data-tip="여름에는 차량 상태와 물을 반드시 확인하고 한낮의 장거리 도보 이동은 피하세요."><img src="../../../../shared-media/death-valley.jpg" alt="데스밸리 자브리스키 포인트의 굽이치는 황토빛 지층"><figcaption><strong>데스밸리</strong><span>자브리스키 포인트에서 만난 사막의 결</span><div class="place-actions"><button class="place-detail" type="button">자세히 보기</button><button class="place-save" type="button" aria-pressed="false">♡ 일정 저장</button></div></figcaption></figure>
+      </div>
+      <div class="saved-route" aria-live="polite">
+        <div><p>MY ROAD TRIP</p><h3>저장한 여행 일정</h3></div>
+        <div id="savedPlaces" class="saved-places"><span>저장한 명소가 없습니다.</span></div>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>먹거리와 팁</h2>
+      <div class="two-column">
+        <article><h3>추천 먹거리</h3><p>나바호 타코, 미국식 바비큐, 라스베이거스의 다양한 뷔페와 사막 지역의 달콤한 데이트 셰이크를 추천합니다.</p></article>
+        <aside><h3>8월 여행 팁</h3><p>물을 넉넉히 준비하고 한낮의 사막 이동은 줄이세요. 엔텔로프 캐니언 투어와 라스베이거스 공연은 미리 예약하는 것이 좋습니다.</p></aside>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>스피어에서 만난 서부 풍경</h2>
+      <p>네바다 라스베이거스에서 직접 관람한 스피어의 거대한 스크린 속에서 로드트립의 풍경을 다시 만난 순간입니다.</p>
+      <video controls playsinline preload="metadata" poster="../../../../shared-media/las-vegas-sphere-poster.jpg" aria-label="라스베이거스 스피어 몰입형 영상"><source src="../../../../shared-media/las-vegas-sphere.mp4" type="video/mp4">영상을 재생할 수 없습니다.</video>
+    </section>
+  </main>
+
+  <dialog id="placeDialog" class="place-dialog" aria-labelledby="dialogTitle">
+    <form method="dialog"><button class="dialog-close" aria-label="상세 정보 닫기">✕</button></form>
+    <p class="dialog-kicker">WEST COAST ROAD TRIP</p>
+    <h2 id="dialogTitle"></h2>
+    <p id="dialogDescription"></p>
+    <div class="dialog-tip"><strong>여행 팁</strong><p id="dialogTip"></p></div>
+  </dialog>
+
+  <footer class="archive-footer"><span>Frontend Practice Archive</span><a href="#top">맨 위로 ↑</a></footer>
+  <script src="js/travel.js"></script>
+</body>
+</html>

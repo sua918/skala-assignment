@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="작업과 일상을 위한 추천 상품 여섯 가지를 소개하는 갤러리">
+  <title>작업과 일상을 위한 6가지 | Simple Shop</title>
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="../../../../../css/project-shell.css?v=4">
+</head>
+<body id="top">
+  <header class="archive-header">
+    <a class="archive-brand" href="../../../../../index.html">CHAE / FRONTEND</a>
+    <span class="archive-page-name">Simple Shop</span>
+    <nav class="archive-subnav" aria-label="상품 갤러리 메뉴">
+      <a href="#products">상품</a>
+    </nav>
+    <button class="archive-action" id="themeButton" type="button" aria-pressed="false">🌙 다크</button>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">DESK TO DAILY · 6 ESSENTIALS</p>
+      <h1 id="hero-title">작업과 일상을 위한<br>여섯 가지 선택</h1>
+      <p class="hero-description">
+        집중이 필요한 작업 시간부터 잠깐의 외출과 휴식까지,
+        매일 자연스럽게 손이 가는 제품을 한곳에 모았습니다.
+      </p>
+      <a class="hero-link" href="#products">선정 제품 보기 <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="products" class="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EVERYDAY FAVORITES</p>
+          <h2 id="products-title">매일을 채우는 제품</h2>
+        </div>
+        <p>WORK · FOCUS · LIFE</p>
+      </div>
+
+      <div class="catalog-controls" aria-label="상품 검색 및 필터">
+        <label class="search-field" for="productSearch">
+          <span>상품 검색</span>
+          <input id="productSearch" type="search" placeholder="상품명이나 브랜드를 입력하세요" autocomplete="off">
+        </label>
+        <div class="category-filters" role="group" aria-label="상품 용도 필터">
+          <button class="active" type="button" data-category="all" aria-pressed="true">전체</button>
+          <button type="button" data-category="work" aria-pressed="false">작업</button>
+          <button type="button" data-category="audio" aria-pressed="false">오디오</button>
+          <button type="button" data-category="life" aria-pressed="false">일상</button>
+          <button type="button" data-category="favorite" aria-pressed="false">관심 상품</button>
+        </div>
+        <p id="productCount" class="product-count" aria-live="polite"></p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-id="macbook-air-m5" data-category="work" data-search="apple macbook air m5 노트북 작업 코딩">
+          <figure class="product-visual">
+            <img src="assets/macbook-air-m5.jpg" alt="스카이 블루, 실버, 스타라이트, 미드나이트 색상의 13형 MacBook Air" width="1200" height="630">
+            <figcaption>01 · LAPTOP</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">APPLE</p>
+            <h3>13형 MacBook Air M5</h3>
+            <p class="summary">가볍게 들고 다니면서 코딩과 콘텐츠 작업을 이어가기 좋은 최신 Air.</p>
+            <ul class="spec-list">
+              <li><span>칩</span><strong>M5 · 10코어 CPU</strong></li>
+              <li><span>기본 구성</span><strong>16GB · 512GB</strong></li>
+              <li><span>색상</span><strong>4가지</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.apple.com/kr/shop/buy-mac/macbook-air/13-%EB%AA%A8%EB%8D%B8" target="_blank" rel="noreferrer">Apple 공식 정보 ↗</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="mx-keys-s" data-category="work" data-search="logitech mx keys s 키보드 작업 코딩">
+          <figure class="product-visual">
+            <img src="assets/logitech-mx-keys-s.png" alt="그래파이트 색상의 로지텍 MX Keys S 키보드" width="1200" height="1200" loading="lazy">
+            <figcaption>02 · KEYBOARD</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">LOGITECH</p>
+            <h3>MX Keys S</h3>
+            <p class="summary">손이 가까워지면 켜지는 백라이트와 안정적인 타건감을 갖춘 풀사이즈 키보드.</p>
+            <ul class="spec-list">
+              <li><span>키 구성</span><strong>풀사이즈</strong></li>
+              <li><span>백라이트</span><strong>근접 센서 자동 점등</strong></li>
+              <li><span>자동화</span><strong>Smart Actions</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.logitech.com/ko-kr/shop/p/mx-keys-s.920-011598" target="_blank" rel="noreferrer">Logitech 공식 정보 ↗</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="mx-master-3s" data-category="work" data-search="logitech mx master 3s 마우스 작업 편집">
+          <figure class="product-visual">
+            <img src="assets/logitech-mx-master-3s.png" alt="그래파이트 색상의 로지텍 MX Master 3S 마우스" width="1200" height="1200" loading="lazy">
+            <figcaption>03 · MOUSE</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">LOGITECH</p>
+            <h3>MX Master 3S</h3>
+            <p class="summary">정밀 스크롤과 조용한 클릭으로 긴 문서 작업과 편집 흐름을 끊지 않는 마우스.</p>
+            <ul class="spec-list">
+              <li><span>센서</span><strong>최대 8,000 DPI</strong></li>
+              <li><span>스크롤</span><strong>MagSpeed</strong></li>
+              <li><span>멀티 기기</span><strong>최대 3대</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.logitech.com/ko-kr/products/mice/mx-master-3s-business-wireless-mouse.html" target="_blank" rel="noreferrer">Logitech 공식 정보 ↗</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="wh-1000xm6" data-category="audio" data-search="sony wh-1000xm6 헤드폰 오디오 집중">
+          <figure class="product-visual">
+            <img src="assets/sony-wh-1000xm6.png" alt="블랙 색상의 소니 WH-1000XM6 헤드폰" width="1200" height="1200" loading="lazy">
+            <figcaption>04 · HEADPHONES</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">SONY</p>
+            <h3>WH-1000XM6</h3>
+            <p class="summary">적응형 노이즈 캔슬링과 긴 배터리로 이동과 집중 작업을 함께 책임지는 헤드폰.</p>
+            <ul class="spec-list">
+              <li><span>재생 시간</span><strong>NC 켬 최대 30시간</strong></li>
+              <li><span>연결</span><strong>Bluetooth 5.3</strong></li>
+              <li><span>코덱</span><strong>SBC · AAC · LDAC · LC3</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.sony.co.kr/headphones/products/wh-1000xm6" target="_blank" rel="noreferrer">Sony 공식 정보 ↗</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="quencher-30oz" data-category="life" data-search="stanley quencher 텀블러 일상 보냉">
+          <figure class="product-visual">
+            <img src="assets/stanley-quencher-30oz.png" alt="칠리 레드 파이어워크 색상의 스탠리 퀜처 H2.0 30온스 텀블러" width="1200" height="1200" loading="lazy">
+            <figcaption>05 · TUMBLER</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">STANLEY 1913</p>
+            <h3>Quencher H2.0 30 OZ</h3>
+            <p class="summary">손잡이와 빨대, 차량 컵홀더 호환까지 일상적인 사용성을 촘촘히 챙긴 텀블러.</p>
+            <ul class="spec-list">
+              <li><span>보냉</span><strong>9시간</strong></li>
+              <li><span>얼음 보냉</span><strong>40시간</strong></li>
+              <li><span>소재</span><strong>18/8 재생 스테인리스</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.stanley1913.com/products/quencher-h2-0-flowstate-tumbler-30-oz-summer-nights" target="_blank" rel="noreferrer">Stanley 공식 정보 ↗</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="screenbar-halo-2" data-category="work" data-search="benq screenbar halo 2 모니터 조명 작업 데스크">
+          <figure class="product-visual">
+            <img src="assets/benq-screenbar-halo-2.jpg" alt="무선 컨트롤러가 포함된 벤큐 ScreenBar Halo 2 모니터 조명" width="1000" height="1000" loading="lazy">
+            <figcaption>06 · MONITOR LIGHT</figcaption>
+          </figure>
+          <div class="product-copy">
+            <p class="brand">BENQ</p>
+            <h3>ScreenBar Halo 2</h3>
+            <p class="summary">책상 면적을 차지하지 않고 앞·뒤 조명을 따로 조절할 수 있는 모니터 라이트.</p>
+            <ul class="spec-list">
+              <li><span>조도</span><strong>중앙 1,000 lux 초과</strong></li>
+              <li><span>색온도</span><strong>2,700K–6,500K</strong></li>
+              <li><span>연색지수</span><strong>Ra 95 이상</strong></li>
+            </ul>
+            <a class="source-link" href="https://www.benq.com/ko-kr/lighting/monitor-light/screenbar-halo-2.html" target="_blank" rel="noreferrer">BenQ 공식 정보 ↗</a>
+          </div>
+        </article>
+      </div>
+      <div id="emptyProducts" class="empty-products" hidden>
+        <strong>조건에 맞는 상품이 없습니다.</strong>
+        <p>검색어를 지우거나 다른 필터를 선택해 보세요.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="archive-footer">
+    <span>Frontend Practice Archive · Simple Shop</span>
+    <a href="#top">맨 위로 ↑</a>
+  </footer>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>

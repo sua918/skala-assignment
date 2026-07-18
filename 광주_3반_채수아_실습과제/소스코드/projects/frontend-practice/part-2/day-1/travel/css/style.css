@@ -1,0 +1,48 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #e9ebea; color: #1c1c1c; font-family: Pretendard, Arial, sans-serif; line-height: 1.5; }
+nav { position: fixed; top: 0; left: 0; z-index: 10; display: flex; width: 100%; padding: 12px; background: #e9ebea; }
+.archive-header.travel-archive-header { position: fixed; top: 0; left: 0; z-index: 50; }
+nav a { display: inline-flex; align-items: center; justify-content: center; padding: 9px 15px; border: 1px solid #1c1c1c; background: #e9ebea; color: #1c1c1c; font-weight: 700; text-decoration: none; transition: background .18s ease, color .18s ease; }
+nav a + a { border-left: 0; }
+nav a:hover, nav a:focus-visible { background: #1c1c1c; color: #e9ebea; }
+.hero { display: grid; height: 320px; margin-top: 48px; place-items: center; background: linear-gradient(#1c1c1c88, #1c1c1c88), url('../../../../../shared-media/grand-canyon.jpg') center 62% / cover; color: #e9ebea; text-align: center; }
+body .travel-header .hero { margin-top: 72px; }
+.hero p { margin: 0 0 8px; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+.hero h1 { margin: 0; font-size: clamp(34px, 6vw, 58px); letter-spacing: -.04em; }
+main { max-width: 900px; margin: auto; padding: 20px; }
+footer { display: flex; margin-top: 50px; padding: 30px max(20px, calc((100% - 900px) / 2)); background: #1c1c1c; color: #e9ebea; }
+footer a { color: inherit; font-size: 13px; font-weight: 700; text-decoration: none; }
+footer a:hover, footer a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+section { padding-top: 50px; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+figure { margin: 0; overflow: hidden; border: 1px solid #999; }
+figure img { display: block; width: 100%; height: 180px; object-fit: cover; transition: transform .2s; }
+.antelope img { object-position: center 58%; }
+.grand-canyon img { object-position: center 68%; }
+.death-valley img { object-position: center; }
+figure:hover img { transform: scale(1.05); }
+figcaption { display: grid; gap: 4px; padding: 11px 12px; }
+figcaption span { color: #555756; font-size: 12px; }
+.place-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+.place-actions button { min-height: 36px; padding: 7px 9px; border: 1px solid #1c1c1c; background: #e9ebea; color: #1c1c1c; font-size: 11px; font-weight: 800; cursor: pointer; }
+.place-actions button:hover, .place-actions button:focus-visible, .place-save.saved { background: #1c1c1c; color: #e9ebea; }
+.saved-route { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; margin-top: 18px; padding: 20px; border: 1px solid #999; background: #dfe1e0; }
+.saved-route p { margin: 0 0 5px; font-size: 9px; font-weight: 900; letter-spacing: .14em; }
+.saved-route h3 { margin: 0; font-size: 16px; }
+.saved-places { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+.saved-places span { padding: 6px 9px; border: 1px solid #777; background: #e9ebea; font-size: 11px; font-weight: 700; }
+.place-dialog { width: min(520px, calc(100% - 32px)); padding: 30px; border: 1px solid #1c1c1c; background: #e9ebea; color: #1c1c1c; }
+.place-dialog::backdrop { background: rgba(10, 10, 10, .66); backdrop-filter: blur(4px); }
+.place-dialog form { display: flex; justify-content: flex-end; }
+.dialog-close { display: grid; width: 36px; height: 36px; padding: 0; place-items: center; border: 1px solid #1c1c1c; background: transparent; cursor: pointer; }
+.dialog-close:hover, .dialog-close:focus-visible { background: #1c1c1c; color: #e9ebea; }
+.dialog-kicker { margin: 12px 0 8px; font-size: 9px; font-weight: 900; letter-spacing: .14em; }
+.place-dialog h2 { margin: 0 0 14px; font-size: 32px; letter-spacing: -.04em; }
+.place-dialog > p:not(.dialog-kicker) { color: #555756; line-height: 1.7; }
+.dialog-tip { margin-top: 20px; padding: 16px; border-left: 4px solid #1c1c1c; background: #dfe1e0; }
+.dialog-tip p { margin: 7px 0 0; font-size: 13px; line-height: 1.6; }
+.two-column { display: flex; gap: 20px; }
+article, aside { flex: 1; border: 1px solid #999; padding: 12px; }
+video { display: block; width: 100%; height: 440px; margin-top: 18px; object-fit: contain; background: #1c1c1c; }
+@media (max-width: 650px) { body .travel-header .hero { margin-top: 64px; }.gallery { grid-template-columns: 1fr; }.saved-route { grid-template-columns: 1fr; }.saved-places { justify-content: flex-start; }.two-column { flex-direction: column; } }

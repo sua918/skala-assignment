@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+#top { padding: 20px; background: #2563eb; }
+main { max-width: 900px; margin: 30px auto; padding: 20px; }
+.cards { display: flex; gap: 16px; }
+.card { flex: 1; margin: 4px; padding: 20px; border: 1px solid #777; transition: transform .2s; }
+.card:hover { transform: translateY(-5px); }
+@media (max-width: 600px) { .cards { flex-direction: column; } }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="일정, 목표, 날씨와 여행 기록을 한곳에서 관리하는 개인 대시보드">
+  <title>SKALA Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="../../css/project-shell.css?v=4">
+</head>
+<body id="top">
+  <header class="topbar archive-header">
+    <a class="archive-brand" href="../../index.html">CHAE / FRONTEND</a>
+    <span class="archive-page-name">추가 과제 · SKALA LIFE</span>
+    <div class="archive-actions">
+      <span class="archive-meta" id="today-label"></span>
+      <a class="archive-home" href="../../index.html">전체 과제</a>
+      <button class="icon-button archive-action" id="open-settings" type="button">내 정보</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="side-nav" aria-label="주요 메뉴">
+      <a class="nav-link active" href="#dashboard" data-view="dashboard"><span>01</span> 홈</a>
+      <a class="nav-link" href="#schedule" data-view="schedule"><span>02</span> 일정</a>
+      <a class="nav-link" href="#routine" data-view="routine"><span>03</span> 루틴</a>
+      <a class="nav-link" href="#travel" data-view="travel"><span>04</span> 여행</a>
+      <a class="nav-link" href="#tools" data-view="tools"><span>05</span> 잡동사니</a>
+    </nav>
+
+    <main>
+      <section class="view active" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="page-heading">
+          <div><p class="eyebrow">DAILY OVERVIEW</p><h1 id="dashboard-title"><span id="user-name">수아</span>님의 오늘</h1></div>
+          <p id="welcome-copy">작은 목표부터 차근차근 시작해 보세요.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card dark"><span>오늘의 일정</span><strong id="current-class">일정을 확인 중입니다</strong><p id="class-time">-</p></article>
+          <article class="summary-card"><span>목표 달성률</span><strong id="goal-percent">0%</strong><div class="progress"><i id="goal-progress"></i></div></article>
+          <article class="summary-card weather-summary"><span>광주 날씨</span><strong id="weather-temp">--℃</strong><p id="weather-advice">날씨를 불러오는 중입니다</p><button class="text-button" id="weather-retry" type="button" hidden>다시 시도</button></article>
+        </div>
+
+        <div class="insight-grid">
+          <article class="panel today-plan">
+            <div class="panel-heading"><div><p class="eyebrow">TODAY'S PLAN</p><h2>오늘의 실행 흐름</h2></div><strong id="daily-progress">0%</strong></div>
+            <div class="progress"><i id="daily-progress-bar"></i></div>
+            <ul id="daily-checklist" class="daily-checklist" aria-live="polite"></ul>
+          </article>
+          <article class="panel weekly-panel">
+            <div class="panel-heading"><div><p class="eyebrow">7 DAY RHYTHM</p><h2>최근 7일 기록</h2></div><strong id="weekly-average">0%</strong></div>
+            <div id="weekly-chart" class="weekly-chart" aria-label="최근 7일 활동 진행률"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel goals-panel">
+            <div class="panel-heading"><div><p class="eyebrow">GROWTH TRACKER</p><h2>올해의 목표</h2></div><button class="text-button" id="add-goal" type="button">+ 목표 추가</button></div>
+            <ul class="check-list" id="goal-list"></ul>
+          </article>
+          <article class="panel focus-panel">
+            <p class="eyebrow">TODAY'S FOCUS</p><h2 id="focus-title">오늘의 추천</h2>
+            <p id="focus-copy">관심 분야를 설정하면 맞춤 학습을 추천합니다.</p>
+            <a class="solid-button" href="#schedule" data-route="schedule">일정 확인하기</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="schedule" aria-labelledby="schedule-title">
+        <div class="page-heading"><div><p class="eyebrow">SKALA CURRICULUM</p><h1 id="schedule-title">나의 강의 일정</h1></div><p>22주 교육과정을 주간 단위로 살펴보고 준비와 복습을 기록하세요.</p></div>
+        <div class="schedule-toolbar panel">
+          <div>
+            <p class="eyebrow">WEEK VIEW</p>
+            <strong id="schedule-range">주간 일정을 불러오는 중입니다</strong>
+          </div>
+          <div class="schedule-controls">
+            <button class="text-button" id="schedule-prev" type="button">← 이전 주</button>
+            <label for="schedule-date">날짜 이동<input id="schedule-date" type="date" min="2026-07-14" max="2026-12-11"></label>
+            <button class="text-button" id="schedule-today" type="button">오늘</button>
+            <button class="text-button" id="schedule-next" type="button">다음 주 →</button>
+          </div>
+        </div>
+        <div class="schedule-layout">
+          <div class="week-schedule panel" id="week-schedule" aria-live="polite"></div>
+          <aside class="panel class-check-panel"><p class="eyebrow">CLASS CHECK</p><h2 id="selected-class">일정을 선택하세요</h2><p class="muted" id="selected-class-time">날짜를 누르면 준비·복습 체크리스트가 열립니다.</p><div id="class-checks" class="check-list"></div></aside>
+        </div>
+      </section>
+
+      <section class="view" id="routine" aria-labelledby="routine-title">
+        <div class="page-heading"><div><p class="eyebrow">HOLIDAY MAKER</p><h1 id="routine-title">나만의 휴일 루틴</h1></div><p>오늘의 컨디션에 맞는 균형 잡힌 하루를 만들어 보세요.</p></div>
+        <div class="split-grid">
+          <form class="panel control-form" id="routine-form">
+            <label for="mood">오늘의 기분</label><select id="mood" required><option value="calm">느긋해요</option><option value="active">활기차요</option><option value="tired">피곤해요</option><option value="focused">집중하고 싶어요</option></select>
+            <label for="available-time">사용 가능한 시간</label><select id="available-time" required><option value="2">2시간</option><option value="4">4시간</option><option value="6">6시간 이상</option></select>
+            <label for="routine-priority">오늘 더 챙기고 싶은 것</label><select id="routine-priority"><option value="balance">균형</option><option value="study">공부</option><option value="rest">휴식</option><option value="health">건강</option></select>
+            <button class="solid-button" type="submit">루틴 만들기</button>
+          </form>
+          <article class="panel routine-result"><p class="eyebrow">MY DAY</p><h2>추천 일정</h2><ol id="routine-list"><li><time>START</time><div><strong>조건을 선택해 주세요</strong><p>지금의 나에게 맞는 하루를 구성합니다.</p></div></li></ol></article>
+        </div>
+      </section>
+
+      <section class="view" id="travel" aria-labelledby="travel-title">
+        <div class="page-heading"><div><p class="eyebrow">WEST COAST MEMORIES</p><h1 id="travel-title">미국 서부에서 만난 장면</h1></div><p>애리조나·네바다·캘리포니아를 여행하며 직접 담은 장면과 영상을 돌아보세요.</p></div>
+        <div class="travel-grid" id="travel-grid">
+          <article class="trip-card antelope-card" data-trip="antelope-canyon" data-daily="190000"><img src="../shared-media/antelope-canyon.jpg" alt="햇빛이 비치는 엔텔로프 캐니언의 붉은 사암 협곡"><div><button class="favorite" type="button" aria-label="엔텔로프 캐니언 즐겨찾기">♡</button><p>ARIZONA · AUG 2025</p><h2>엔텔로프 캐니언</h2><span>빛 · 사암 · 슬롯 캐니언</span></div></article>
+          <article class="trip-card grand-canyon-card" data-trip="grand-canyon" data-daily="170000"><img src="../shared-media/grand-canyon.jpg" alt="그랜드 캐니언 절벽 위에서 협곡을 바라보는 여행자"><div><button class="favorite" type="button" aria-label="그랜드 캐니언 즐겨찾기">♡</button><p>ARIZONA · AUG 2025</p><h2>그랜드 캐니언</h2><span>절벽 · 전망 · 로드트립</span></div></article>
+          <article class="trip-card death-valley-card" data-trip="death-valley" data-daily="150000"><img src="../shared-media/death-valley.jpg" alt="데스밸리 자브리스키 포인트의 굽이치는 황토빛 지층"><div><button class="favorite" type="button" aria-label="데스밸리 즐겨찾기">♡</button><p>CALIFORNIA · AUG 2025</p><h2>데스밸리</h2><span>사막 · 지층 · 광활함</span></div></article>
+        </div>
+        <div class="travel-tools">
+          <form class="panel budget-form" id="budget-form"><p class="eyebrow">ROAD TRIP BUDGET</p><h2>미국 서부 여행 예산</h2><label for="budget-trip">목적지</label><select id="budget-trip"><option value="190000">엔텔로프 캐니언</option><option value="170000">그랜드 캐니언</option><option value="150000">데스밸리</option></select><label for="trip-days">여행 일수</label><input id="trip-days" type="number" min="1" max="30" value="3" required><label for="travelers">인원</label><input id="travelers" type="number" min="1" max="10" value="1" required><button class="solid-button" type="submit">예상 금액 보기</button><output id="budget-result">항공권과 현지 체류비를 계산해 보세요.</output></form>
+          <article class="panel media-panel"><p class="eyebrow">LAS VEGAS · NEVADA</p><h2>라스베이거스 스피어</h2><p class="media-caption">라스베이거스에서 직접 관람한 스피어. 거대한 스크린 안에서 미국 서부의 풍경 속으로 들어간 듯했던 순간입니다.</p><video controls playsinline preload="metadata" poster="../shared-media/las-vegas-sphere-poster.jpg" aria-label="라스베이거스 스피어 몰입형 영상"><source src="../shared-media/las-vegas-sphere.mp4" type="video/mp4"></video><p class="media-audio-label">ROAD TRIP PLAYLIST</p><audio controls preload="metadata"><source src="../shared-media/music.mp3" type="audio/mpeg"></audio></article>
+        </div>
+      </section>
+
+      <section class="view" id="tools" aria-labelledby="tools-title">
+        <div class="page-heading"><div><p class="eyebrow">DAILY TOOLKIT</p><h1 id="tools-title">오늘을 돕는 잡동사니</h1></div><p>학습 결과를 확인하고 오늘 필요한 준비물을 챙기세요.</p></div>
+        <div class="tools-grid">
+          <article class="panel tool-card"><p class="eyebrow">UP-DOWN</p><h2>숫자 탐색 게임</h2><p class="muted">1부터 50 사이의 숫자를 찾아보세요.</p><form id="game-form" class="inline-form"><label class="sr-only" for="game-number">1부터 50 사이의 숫자</label><input id="game-number" type="number" min="1" max="50" placeholder="숫자" required><button class="solid-button" type="submit">확인</button></form><p class="tool-result" id="game-result">새 게임이 준비되었습니다.</p><div class="stat-row"><span>시도 <b id="game-attempts">0</b></span><span>최고 기록 <b id="game-best">-</b></span></div><button class="text-button" id="game-reset" type="button">새 게임</button></article>
+          <article class="panel tool-card"><p class="eyebrow">GRADE LAB</p><h2>성적 분석기</h2><form id="grade-form" class="score-form"><label>HTML<input name="HTML" type="number" min="0" max="100" required></label><label>CSS<input name="CSS" type="number" min="0" max="100" required></label><label>JavaScript<input name="JavaScript" type="number" min="0" max="100" required></label><button class="solid-button" type="submit">분석하기</button></form><p class="tool-result" id="grade-result">세 과목의 점수를 입력하세요.</p></article>
+          <article class="panel tool-card bag-card"><p class="eyebrow">SMART BAG</p><h2>오늘의 가방</h2><label for="activity">오늘의 활동</label><select id="activity"><option value="class">수업</option><option value="study">카페 공부</option><option value="trip">나들이</option></select><ul class="check-list" id="bag-list"></ul><p class="muted" id="bag-advice"></p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="archive-footer"><span>Frontend Practice Archive</span><a href="#top">맨 위로 ↑</a></footer>
+
+  <dialog id="goal-dialog" aria-labelledby="goal-dialog-title">
+    <form id="goal-form">
+      <div class="dialog-heading"><div><p class="eyebrow">GOAL EDITOR</p><h2 id="goal-dialog-title">목표 추가</h2></div><button class="icon-button dialog-close-button" id="close-goal-dialog" type="button" aria-label="목표 창 닫기">✕</button></div>
+      <input id="goal-id" type="hidden">
+      <label for="goal-text">목표<input id="goal-text" maxlength="40" required placeholder="이루고 싶은 목표를 입력하세요"></label>
+      <div class="form-grid">
+        <label for="goal-priority">중요도<select id="goal-priority"><option value="high">중요</option><option value="normal" selected>보통</option><option value="low">낮음</option></select></label>
+        <label for="goal-due">목표일<input id="goal-due" type="date"></label>
+      </div>
+      <div class="dialog-actions"><button class="text-button" id="cancel-goal" type="button">취소</button><button class="solid-button" type="submit">저장하기</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <form id="settings-form" method="dialog">
+      <div class="dialog-heading"><div><p class="eyebrow">MY PROFILE</p><h2 id="settings-title">대시보드 설정</h2></div><button class="icon-button" id="close-settings" type="button" aria-label="닫기">✕</button></div>
+      <div class="form-grid"><label for="setting-name">이름<input id="setting-name" maxlength="10" required></label><label for="setting-interest">관심 분야<select id="setting-interest"><option value="frontend">프론트엔드</option><option value="design">UI/UX</option><option value="security">정보보안</option><option value="cloud">클라우드</option></select></label></div>
+      <label for="setting-intro">한 줄 소개<textarea id="setting-intro" maxlength="80" rows="3" placeholder="오늘의 방향을 적어보세요"></textarea></label>
+      <div id="settings-summary" class="settings-summary" hidden></div>
+      <div class="dialog-actions"><button class="text-button danger" id="reset-data" type="button">모든 데이터 초기화</button><button class="solid-button" type="submit">저장하기</button></div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/app.js?v=11"></script>
+</body>
+</html>

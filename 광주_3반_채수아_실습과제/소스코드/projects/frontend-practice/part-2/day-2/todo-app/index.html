@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="../../../../../css/project-shell.css?v=4">
+</head>
+<body id="top">
+  <header class="archive-header"><a class="archive-brand" href="../../../../../index.html">CHAE / FRONTEND</a><span class="archive-page-name">할 일 관리</span><a class="archive-home" href="../../../../../index.html">전체 과제</a></header>
+  <main>
+    <h1>할 일 관리</h1>
+    <p id="quote">오늘의 한마디를 불러오는 중...</p>
+
+    <form id="todoForm">
+      <label class="todo-field" for="todoInput">
+        <span>할 일</span>
+        <input id="todoInput" autocomplete="off" placeholder="할 일을 입력하세요" aria-describedby="todoFeedback" aria-invalid="false">
+      </label>
+      <label class="option-field" for="priorityInput">
+        <span>중요도</span>
+        <select id="priorityInput">
+          <option value="normal">보통</option>
+          <option value="high">중요</option>
+          <option value="low">낮음</option>
+        </select>
+      </label>
+      <label class="option-field" for="dueDateInput">
+        <span>마감일</span>
+        <input id="dueDateInput" type="date" min="1900-01-01" max="9999-12-31"
+          autocomplete="off" aria-describedby="todoFeedback" aria-invalid="false">
+      </label>
+      <div class="form-actions">
+        <button id="submitButton" type="submit">추가</button>
+        <button id="cancelEditButton" type="button" hidden>수정 취소</button>
+      </div>
+    </form>
+    <p id="todoFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+
+    <section class="progress-panel" aria-labelledby="progressTitle">
+      <div><h2 id="progressTitle">학습 진행률</h2><strong id="progressText">0%</strong></div>
+      <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+    </section>
+
+    <div id="filters" role="group" aria-label="할 일 상태 필터">
+      <button class="active" data-filter="all" aria-pressed="true">전체</button>
+      <button data-filter="active" aria-pressed="false">진행중</button>
+      <button data-filter="done" aria-pressed="false">완료</button>
+    </div>
+
+    <ul id="todoList"></ul>
+    <p id="emptyState" class="empty-state">등록된 할 일이 없습니다. 오늘 할 일을 하나 추가해 보세요.</p>
+    <p id="summary"></p>
+  </main>
+  <footer class="archive-footer"><span>Frontend Practice Archive</span><a href="#top">맨 위로 ↑</a></footer>
+  <script type="module" src="js/app.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@font-face { font-family: 'Pretendard Archive'; font-style: normal; font-weight: 45 920; font-display: swap; src: url('../assets/fonts/PretendardVariable.woff2') format('woff2-variations'); }
+.archive-header ~ main, body { padding-top: 0; }
+.archive-header { position: sticky; top: 0; left: auto; z-index: 50; display: flex; align-items: center; gap: 0; box-sizing: border-box; width: 100%; max-width: none; min-height: 72px; padding: 0 max(24px, calc((100% - 1180px) / 2)); overflow: hidden; border: 0; border-bottom: 1px solid #c9ccca; background: rgba(233, 235, 234, .94); color: #1c1c1c; box-shadow: 0 8px 30px rgba(28, 28, 28, .035); font-family: 'Pretendard Archive', sans-serif; backdrop-filter: blur(14px); }
+.archive-header::before { display: none; }
+.archive-header .archive-brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 11px; color: #1c1c1c; font-family: 'Pretendard Archive', sans-serif; font-size: 13px; font-style: normal; font-weight: 900; line-height: 13px; letter-spacing: .07em; text-decoration: none; white-space: nowrap; font-synthesis: none; }
+.archive-brand::before { display: grid; width: 34px; height: 34px; place-items: center; background: #1c1c1c; color: #e9ebea; content: "CF"; font-size: 10px; font-weight: 900; letter-spacing: .06em; }
+.archive-page-name { margin-left: 20px; padding-left: 20px; border-left: 1px solid #c9ccca; color: #686b69; font-size: 11px; font-weight: 800; letter-spacing: .04em; white-space: nowrap; }
+.archive-home, .archive-action { display: inline-flex; min-height: 36px; align-items: center; justify-content: center; padding: 8px 13px; border: 1px solid #1c1c1c; background: transparent; color: #1c1c1c; font-size: 11px; font-weight: 800; line-height: 1; text-decoration: none; white-space: nowrap; transition: background .18s ease, color .18s ease; }
+.archive-home { margin-left: auto; }
+.archive-home:hover, .archive-home:focus-visible, .archive-action:hover, .archive-action:focus-visible { background: #1c1c1c; color: #e9ebea; }
+.archive-subnav { position: static; z-index: auto; display: flex; gap: 22px; width: auto; margin-left: auto; padding: 0; background: transparent; }
+.archive-subnav a { position: relative; padding: 8px 0; border: 0; background: transparent; color: #686b69; font-size: 11px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.archive-subnav a::after { position: absolute; right: 0; bottom: 4px; left: 0; height: 1px; background: #1c1c1c; content: ""; transform: scaleX(0); transform-origin: right; transition: transform .18s ease; }
+.archive-subnav a:hover, .archive-subnav a:focus-visible { background: transparent; color: #1c1c1c; }
+.archive-subnav a:hover::after, .archive-subnav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.archive-subnav + .archive-home, .archive-subnav + .archive-action { margin-left: 18px; }
+.archive-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.archive-actions .archive-home { margin-left: 0; }
+.archive-meta, .topbar .archive-meta { margin: 0 8px 0 0; color: #686b69; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.archive-footer { display: flex; justify-content: space-between; width: 100%; max-width: none; margin: 70px 0 0; padding: 38px max(24px, calc((100% - 1180px) / 2)); background: #1c1c1c; color: #e9ebea; font-size: 13px; text-align: left; }
+.archive-footer a { color: inherit; font-weight: 700; text-decoration: none; }
+.archive-footer a:hover, .archive-footer a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.travel-header nav { position: static; }
+.travel-header .hero { margin-top: 0; }
+@media (max-width: 760px) { .archive-header { min-height: 64px; padding-inline: 18px; }.archive-header .archive-brand { font-size: 0; }.archive-brand::before { width: 32px; height: 32px; font-size: 9px; }.archive-page-name { display: none; }.archive-subnav { gap: 14px; }.archive-subnav + .archive-home, .archive-subnav + .archive-action { margin-left: 12px; }.archive-meta { display: none; }.archive-footer { margin-top: 45px; } }
+@media (max-width: 520px) { .archive-header { padding-inline: 12px; }.archive-subnav { gap: 9px; }.archive-subnav a { font-size: 10px; }.archive-home, .archive-action { min-height: 32px; padding: 7px 9px; font-size: 10px; }.archive-actions { gap: 6px; }.archive-actions .archive-home { display: none; } }
+@media (max-width: 390px) { .travel-archive-header .archive-subnav { gap: 5px; }.travel-archive-header .archive-subnav a { font-size: 9px; }.travel-archive-header .archive-home { margin-left: 7px; padding-inline: 7px; } }
