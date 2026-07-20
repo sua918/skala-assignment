@@ -1,0 +1,32 @@
+{
+  "run_id": "outage_adaptive",
+  "scenario": "outage",
+  "scenario_label": "장애 폭주",
+  "mode": "adaptive",
+  "requested": 60,
+  "extracted": 59,
+  "extract_failed": 1,
+  "valid": 57,
+  "transform_invalid": 2,
+  "retries": 9,
+  "p50_latency_ms": 15.453,
+  "p95_latency_ms": 46.583,
+  "extract_seconds": 0.3858,
+  "transform_seconds": 0.0001,
+  "load_seconds": 0.0008,
+  "total_seconds": 0.3867,
+  "concurrency_history": [
+    10,
+    5,
+    7,
+    9,
+    4,
+    2,
+    4,
+    6,
+    8
+  ],
+  "event_count": 170,
+  "events_file": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\Advanced\\etl_blackbox\\output\\runs\\outage_adaptive\\events.jsonl",
+  "records_file": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\Advanced\\etl_blackbox\\output\\runs\\outage_adaptive\\valid_records.csv"
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "row": 7,
+    "id": 7,
+    "data": {
+      "id": 7,
+      "username": "user_007",
+      "email": "user7@example.com",
+      "age": -5,
+      "is_active": true,
+      "signup_date": "2024-11-07",
+      "profile": {
+        "country": "DE",
+        "tier": "free",
+        "score": 87.43
+      },
+      "tags": [
+        "web"
+      ]
+    },
+    "errors": [
+      {
+        "type": "greater_than_equal",
+        "loc": [
+          "age"
+        ],
+        "msg": "Input should be greater than or equal to 0",
+        "input": -5,
+        "ctx": {
+          "ge": 0
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/greater_than_equal"
+      }
+    ]
+  },
+  {
+    "row": 13,
+    "id": 13,
+    "data": {
+      "id": 13,
+      "username": "user_013",
+      "email": "not-an-email",
+      "age": 28,
+      "is_active": true,
+      "signup_date": "2024-08-28",
+      "profile": {
+        "country": "KR",
+        "tier": "pro",
+        "score": 8.4
+      },
+      "tags": []
+    },
+    "errors": [
+      {
+        "type": "value_error",
+        "loc": [
+          "email"
+        ],
+        "msg": "Value error, 올바른 이메일 형식이 아닙니다",
+        "input": "not-an-email",
+        "ctx": {
+          "error": "올바른 이메일 형식이 아닙니다"
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/value_error"
+      }
+    ]
+  },
+  {
+    "row": 21,
+    "id": 21,
+    "data": {
+      "id": 21,
+      "username": "user_021",
+      "age": 28,
+      "is_active": false,
+      "signup_date": "2025-03-09",
+      "profile": {
+        "country": "KR",
+        "tier": "free",
+        "score": 99.99
+      },
+      "tags": []
+    },
+    "errors": [
+      {
+        "type": "missing",
+        "loc": [
+          "email"
+        ],
+        "msg": "Field required",
+        "input": {
+          "id": 21,
+          "username": "user_021",
+          "age": 28,
+          "is_active": false,
+          "signup_date": "2025-03-09",
+          "profile": {
+            "country": "KR",
+            "tier": "free",
+            "score": 99.99
+          },
+          "tags": []
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/missing"
+      }
+    ]
+  },
+  {
+    "row": 29,
+    "id": 29,
+    "data": {
+      "id": 29,
+      "username": "user_029",
+      "email": "user29@example.com",
+      "age": 34,
+      "is_active": false,
+      "signup_date": "2025-04-20",
+      "profile": {
+        "country": "KR",
+        "tier": "enterprise",
+        "score": 150.0
+      },
+      "tags": []
+    },
+    "errors": [
+      {
+        "type": "less_than_equal",
+        "loc": [
+          "profile",
+          "score"
+        ],
+        "msg": "Input should be less than or equal to 100",
+        "input": 150.0,
+        "ctx": {
+          "le": 100.0
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/less_than_equal"
+      }
+    ]
+  }
+]

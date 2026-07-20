@@ -1,0 +1,48 @@
+[
+  {
+    "id": 36,
+    "stage": "extract",
+    "error": "서비스 처리 용량 초과"
+  },
+  {
+    "id": 54,
+    "stage": "extract",
+    "error": "주입된 영구 서버 오류"
+  },
+  {
+    "id": 13,
+    "stage": "transform",
+    "errors": [
+      {
+        "type": "greater_than",
+        "loc": [
+          "price"
+        ],
+        "msg": "Input should be greater than 0",
+        "input": -100.0,
+        "ctx": {
+          "gt": 0.0
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/greater_than"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "stage": "transform",
+    "errors": [
+      {
+        "type": "greater_than",
+        "loc": [
+          "price"
+        ],
+        "msg": "Input should be greater than 0",
+        "input": -100.0,
+        "ctx": {
+          "gt": 0.0
+        },
+        "url": "https://errors.pydantic.dev/2.13/v/greater_than"
+      }
+    ]
+  }
+]

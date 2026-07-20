@@ -1,0 +1,12 @@
+{
+  "requested": 60,
+  "extracted": 60,
+  "extract_failed": 0,
+  "valid": 58,
+  "transform_invalid": 2,
+  "invalid_total": 2,
+  "rows_saved": 58,
+  "elapsed_seconds": 0.3612,
+  "csv": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\capstone01_async_etl\\output\\products.csv",
+  "parquet": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\capstone01_async_etl\\output\\products.parquet"
+}

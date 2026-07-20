@@ -1,0 +1,24 @@
+{
+  "run_id": "outage_fixed-3",
+  "scenario": "outage",
+  "scenario_label": "장애 폭주",
+  "mode": "fixed-3",
+  "requested": 60,
+  "extracted": 59,
+  "extract_failed": 1,
+  "valid": 57,
+  "transform_invalid": 2,
+  "retries": 5,
+  "p50_latency_ms": 15.482,
+  "p95_latency_ms": 26.885,
+  "extract_seconds": 0.4801,
+  "transform_seconds": 0.0001,
+  "load_seconds": 0.0011,
+  "total_seconds": 0.4814,
+  "concurrency_history": [
+    3
+  ],
+  "event_count": 160,
+  "events_file": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\Advanced\\etl_blackbox\\output\\runs\\outage_fixed-3\\events.jsonl",
+  "records_file": "C:\\Users\\teo\\skala-assignment-upload\\Python_data_0720_Day1\\source\\Advanced\\etl_blackbox\\output\\runs\\outage_fixed-3\\valid_records.csv"
+}
