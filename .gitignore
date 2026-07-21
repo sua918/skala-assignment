@@ -31,6 +31,8 @@ __pycache__/
 venv/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+pytest-cache-files-*/
 
 # Java and Gradle
 .gradle/
@@ -48,3 +50,16 @@ temp/
 02차시-html-css-javascript/assignment/frontend-assignment-final.zip
 
 .coverage
+
+# Python Day 1 generated files
+Python_data_0720_Day1/**/output/
+
+# Python Day 2 generated files
+Python_data_0721_Day2/.matplotlib/
+Python_data_0721_Day2/data/*.csv
+Python_data_0721_Day2/data/*.json
+Python_data_0721_Day2/**/output/
+Python_data_0721_Day2/**/*.joblib
+Python_data_0721_Day2/**/*.parquet
+Python_data_0721_Day2/*.docx
+Python_data_0721_Day2/Advanced/drift_monitor/SELF_REVIEW.md

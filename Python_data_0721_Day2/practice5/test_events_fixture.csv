@@ -1,0 +1,5 @@
+event_id,event_type,amount
+A,purchase,100.0
+B,purchase,50.0
+C,refund,20.0
+D,view,0.0
